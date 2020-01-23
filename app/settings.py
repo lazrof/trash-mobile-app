@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'api',
 
     ##3rd Party Apps
-    
+    'corsheaders',
 
     #Rest Auth
     'rest_framework',
@@ -53,6 +53,7 @@ SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -60,6 +61,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'app.urls'
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:8100',
+    'http://localhost:8000',
+]
 
 TEMPLATES = [
     {

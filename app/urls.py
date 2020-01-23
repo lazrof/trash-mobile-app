@@ -16,6 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from api.views import (TrashViewSet, )
+
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register('api/trash', TrashViewSet, basename='trash')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,3 +33,5 @@ urlpatterns = [
     path('rest-auth/', include('rest_auth.urls'))
 
 ]
+
+urlpatterns += router.urls
