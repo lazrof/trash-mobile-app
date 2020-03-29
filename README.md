@@ -1,2 +1,2 @@
 # trash-mobile-app
-Is a mobile app for trash locations
+Is the backend  of a mobile app for trash locations
